@@ -1,9 +1,9 @@
 /***
  * Excerpted from "Test-Driven Development for Embedded C",
  * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
+ * Copyrights apply to this code. It may not be used to create training material,
  * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
+ * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/jgade for more book information.
 ***/
 /*- ------------------------------------------------------------------ -*/
@@ -32,7 +32,8 @@
 /// @param file the file to log to
 /// @param line the line number for stack trace
 ///
-void RunTimeError(const char * message, int parameter, 
+
+extern void RunTimeError(const char * message, int parameter,
                   const char * file, int line);
 
 /// Code should use this macro instead of the function

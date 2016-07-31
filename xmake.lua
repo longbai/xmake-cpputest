@@ -7,7 +7,7 @@ set_version("1.0.0")
 -- local os = require('os')
 -- print(os.getenv("HOME"))
 -- set warning all as error
-set_warnings("all", "error")
+-- set_warnings("all", "error")
 
 -- set language: c99, c++11
 set_languages("c99", "cxx11")
@@ -57,11 +57,18 @@ target("tutorial")
     -- set kind
     set_kind("binary")
 
+    -- add include directories
+    add_includedirs("include", "include/LedDriver", "mocks", "/usr/local/Cellar/cpputest/3.8/include")
+
     -- add files
     add_files("src/**.c", "mocks/*.c", "tests/**.cpp")
 
-    -- add include directories
-    add_includedirs("include", "include/LedDriver", "mocks")
+    -- add link library
+    add_links("CppUTest")
+
+    -- add link directories
+    add_linkdirs("/usr/local/Cellar/cpputest/3.8/lib")
+
 
 -- add target
 -- target("hello")
