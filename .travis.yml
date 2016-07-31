@@ -1,0 +1,21 @@
+sudo: required
+language: C
+os:
+  - linux
+  - osx
+compiler:
+  - clang
+  - gcc
+
+install:
+  - git clone --branch=dev https://github.com/waruqi/xmake.git waruqi/xmake
+  - cd ./waruqi/xmake
+  - sudo ./install
+  - cd -
+
+script:
+  - xmake
+  - xmake p
+  - xmake f -m debug
+  - xmake -r
+  - xmake c

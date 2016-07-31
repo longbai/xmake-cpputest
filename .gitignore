@@ -1,0 +1,14 @@
+.DS_Store
+*.swp
+*.suo
+
+TestResult.xml
+test-results
+Qiniu.LocalTest
+*.userprefs
+
+bin
+obj
+
+build/
+.xmake/
