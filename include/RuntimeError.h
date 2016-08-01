@@ -33,7 +33,7 @@
 /// @param line the line number for stack trace
 ///
 
-extern void RunTimeError(const char * message, int parameter,
+extern void RuntimeError(const char * message, int parameter,
                   const char * file, int line);
 
 /// Code should use this macro instead of the function

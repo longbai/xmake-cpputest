@@ -4,10 +4,10 @@ set_project("xmake-cpputest")
 -- version
 set_version("1.0.0")
 
--- local os = require('os')
--- print(os.getenv("HOME"))
+print(getenv("CPPUTEST_HOME"))
+
 -- set warning all as error
--- set_warnings("all", "error")
+set_warnings("all", "error")
 
 -- set language: c99, c++11
 set_languages("c99", "cxx11")
@@ -69,21 +69,11 @@ target("tutorial")
     -- add link directories
     add_linkdirs("/usr/local/Cellar/cpputest/3.8/lib")
 
-
 -- add target
--- target("hello")
+target("tut")
 
---     -- set kind
---     set_kind("binary")
+    -- set kind
+    set_kind("binary")
 
---     -- add files
---     add_files("src/main.cpp")
-
--- add target
--- target("tut")
-
---     -- set kind
---     set_kind("binary")
-
---     -- add files
---     add_files("src/Tutorial/*.cxx")
+    -- add files
+    add_files("src/Tutorial/*.cxx")
