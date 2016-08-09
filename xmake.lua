@@ -7,7 +7,7 @@ set_version("1.0.0")
 if is_os("macosx") then
     cpputest_home = "/usr/local/Cellar/cpputest/3.8/"
 else
-    cpputest_home = ""
+    cpputest_home = "/usr/local/"
 end
 
 -- set warning all as error
