@@ -4,11 +4,7 @@ set_project("xmake-cpputest")
 -- version
 set_version("1.0.0")
 
-if is_os("macosx") then
-    cpputest_home = "/usr/local/Cellar/cpputest/3.8/"
-else
-    cpputest_home = "/usr/local/"
-end
+cpputest_home = "/usr/local/"
 
 -- set warning all as error
 set_warnings("all", "error")
