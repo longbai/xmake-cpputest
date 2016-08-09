@@ -59,8 +59,6 @@ option("CppUTest")
     set_category("option")
     set_description("Specify CppUTest Home")
 
--- if is_option("CppUTest") then CppUTestHome=get_option("CppUTest") end
-
 -- add target
 target("tutorial")
 
@@ -78,7 +76,6 @@ target("tutorial")
 
     -- add link directories
     add_linkdirs(cpputest_home .. "lib")
-    -- add_linkdirs("$(CppUTestHome)lib")
 
 -- add target
 target("tut")
