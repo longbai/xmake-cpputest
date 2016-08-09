@@ -28,7 +28,4 @@ before_script:
 
 script:
   - xmake
-  - xmake p
-  - xmake f -m debug
-  - xmake -r tutorial
-  - xmake c
+  - ./build/tutorial
