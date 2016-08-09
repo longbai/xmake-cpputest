@@ -27,6 +27,6 @@ before_script:
   - sh ./install_cpputest.sh
 
 script:
-  - xmake f -m debug
+  #- xmake f -m debug
   - xmake
   - ./build/tutorial
