@@ -4,7 +4,11 @@ set_project("xmake-cpputest")
 -- version
 set_version("1.0.0")
 
-print(getenv("CPPUTEST_HOME"))
+if is_os("macosx") then
+    cpputest_home = "/usr/local/Cellar/cpputest/3.8/"
+else
+    cpputest_home = ""
+end
 
 -- set warning all as error
 set_warnings("all", "error")
@@ -38,6 +42,7 @@ if is_mode("debug", "check", "coverage") then
         add_ldflags("--coverage")
     end
 end
+
 -- the release mode
 if is_mode("release") then
 
@@ -51,6 +56,15 @@ if is_mode("release") then
     set_strip("all")
 end
 
+-- add option: CppUTest
+option("CppUTest")
+    set_enable(false)
+    set_showmenu(true)
+    set_category("option")
+    set_description("Specify CppUTest Home")
+
+-- if is_option("CppUTest") then CppUTestHome=get_option("CppUTest") end
+
 -- add target
 target("tutorial")
 
@@ -58,7 +72,7 @@ target("tutorial")
     set_kind("binary")
 
     -- add include directories
-    add_includedirs("include", "include/LedDriver", "mocks", "/usr/local/Cellar/cpputest/3.8/include")
+    add_includedirs("include", "include/LedDriver", "mocks", cpputest_home .. "include")
 
     -- add files
     add_files("src/**.c", "mocks/*.c", "tests/**.cpp")
@@ -67,7 +81,8 @@ target("tutorial")
     add_links("CppUTest")
 
     -- add link directories
-    add_linkdirs("/usr/local/Cellar/cpputest/3.8/lib")
+    add_linkdirs(cpputest_home .. "lib")
+    -- add_linkdirs("$(CppUTestHome)lib")
 
 -- add target
 target("tut")

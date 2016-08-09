@@ -1,0 +1,29 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd":
+			[
+				"xmake"
+			],
+			"name": "Make"
+		}
+	],
+	"folders":
+	[
+		{
+			"path": "/Users/bailong/github/long/xmake-cpputest"
+		}
+	],
+	"settings":
+	{
+		"sublimeclang_options":
+		[
+			"-I${folder:${project_path:xmake-tddc.sublime-project}}/include/**",
+			"-I${folder:${project_path:xmake-tddc.sublime-project}}/include",
+			"-I/usr/local/Cellar/cpputest/3.8/include/**",
+			"-I${folder:${project_path:xmake-tddc.sublime-project}}/mocks"
+		],
+		"tab_size": 2
+	}
+}

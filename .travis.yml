@@ -7,6 +7,9 @@ compiler:
   - clang
   - gcc
 
+before_script:
+  - sh ./install_cpputest.sh
+
 install:
   - git clone --branch=dev https://github.com/waruqi/xmake.git waruqi/xmake
   - cd ./waruqi/xmake
@@ -17,5 +20,5 @@ script:
   - xmake
   - xmake p
   - xmake f -m debug
-  - xmake -r
+  - xmake -r tutorial
   - xmake c

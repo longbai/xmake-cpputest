@@ -1,9 +1,9 @@
 /***
  * Excerpted from "Test-Driven Development for Embedded C",
  * published by The Pragmatic Bookshelf.
- * Copyrights apply to this code. It may not be used to create training material, 
+ * Copyrights apply to this code. It may not be used to create training material,
  * courses, books, articles, and the like. Contact us if you are in doubt.
- * We make no guarantees that this code is fit for any purpose. 
+ * We make no guarantees that this code is fit for any purpose.
  * Visit http://www.pragmaticprogrammer.com/titles/jgade for more book information.
 ***/
 /*- ------------------------------------------------------------------ -*/
@@ -36,14 +36,14 @@ TEST_GROUP(LedDriver)
 {
 
   uint16_t virtualLeds;
- 
+
   void setup()
   {
     virtualLeds = 0;
     LedDriver_Create(&virtualLeds);
   }
 
-  void teardown() 
+  void teardown()
   {
     LedDriver_Destroy();
   }
@@ -132,7 +132,7 @@ TEST(LedDriver, IsOn)
 {
   CHECK_EQUAL(FALSE, LedDriver_IsOn(1));
   LedDriver_TurnOn(1);
-  CHECK_EQUAL(TRUE, LedDriver_IsOn(1)); 
+  CHECK_EQUAL(TRUE, LedDriver_IsOn(1));
 }
 
 TEST(LedDriver, IsOff)
@@ -142,7 +142,7 @@ TEST(LedDriver, IsOff)
   CHECK_EQUAL(FALSE, LedDriver_IsOff(12));
 }
 
-TEST(LedDriver, OutOfBoundsLedsAreAlwaysOff) 
+TEST(LedDriver, OutOfBoundsLedsAreAlwaysOff)
 {
   CHECK_EQUAL(TRUE, LedDriver_IsOff(0));
   CHECK_EQUAL(TRUE, LedDriver_IsOff(17));
