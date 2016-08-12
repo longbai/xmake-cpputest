@@ -26,8 +26,6 @@ addons:
 before_script:
   - sh ./install_cpputest.sh
 script:
-  - if [ "$CXX" = "clang++" ]; then xmake f --cc=clang --cxx=clang++; fi
-  - if [ "$CXX" = "g++" ]; then xmake f --cc=gcc --cxx=g++; fi
   #- xmake f -m debug
   - xmake
   - ./build/tutorial
